@@ -17,103 +17,115 @@ export default function Login() {
     }
 
     var inputs = document.getElementsByClassName("input");
-    for (var y = 0; y < inputs.length; y++) {
-      inputs[y].addEventListener("keyup", function () {
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].addEventListener("keyup", function () {
         toggleInputContainer(this);
       });
-      toggleInputContainer(inputs[y]);
+      toggleInputContainer(inputs[i]);
     }
   });
   return (
-    <div className="z-20 h-full w-screen bg-gray-500 absolute top-0 left-0 bg-opacity-25 pt-16 pb-8 px-8">
-      <div className="h-full w-full bg-white p-8">
-        <img src={LetraLogo} alt="Logo" className="h-12 flex mx-auto mb-8" />
-
-        <div className="mb-2 relative w-full">
-          <input
-            className="input text-xs h-9 pt-3 border border-gray-200 appearance-none rounded w-full px-2 focus:border-gray-400 focus:outline-none active:outline-none active:border-gray-400"
-            id="email"
-            type="text"
-          />
-          <label
-            htmlFor="email"
-            className="label absolute pl-2 mt-1 leading-tighter text-gray-400 text-xs cursor-text"
-          >
-            Teléfono, usuario o correo electrónico
-          </label>
-        </div>
-        <div class="mb-4 relative w-full">
-          <input
-            className="input text-xs h-9 pt-3 border border-gray-200 appearance-none rounded w-full px-2 focus:border-gray-400 focus:outline-none active:outline-none active:border-gray-400"
-            id="password"
-            type="password"
-          />
-          <label
-            htmlFor="password"
-            className="label absolute pl-2 mt-1 leading-tighter text-gray-400 text-xs cursor-text"
-          >
-            Contraseña
-          </label>
-        </div>
-        <button
-          type="button"
-          className="buttonInstagram w-full text-sm py-1 text-white rounded px-4 transition duration-500 ease select-none hover:bg-blue-700 focus:outline-none focus:shadow-outline mb-4"
-        >
-          Iniciar Sesión
-        </button>
-        <div className="flex flex-row items-center">
-          <div className="h-px bg-gray-300 w-2/5"></div>
-          <div className="mx-auto text-gray-400 text-lg mb-1">o</div>
-          <div className="h-px bg-gray-300 w-2/5"></div>
-        </div>
-        <div className="flex flex-col h-full">
-          <h5 className="mx-auto linkInstagram2 text-sm font-medium">
-            Iniciar sesión con Facebook
-          </h5>
-          <h5 className="mx-auto linkInstagram2 text-xs">
-            ¿Olvidaste tu contraseña?
-          </h5>
-          <div className="flex flex-row">
-            <span className="ml-auto text-xs mr-1">
-              ¿No tienes una cuenta?{" "}
-            </span>{" "}
-            <a
-              className="mr-auto linkInstagram text-xs"
-              href="http://"
-              target="_blank"
-              rel="noopener noreferrer"
+    <div className="z-40 h-full w-full bg-gray-500 absolute top-0 left-0 bg-opacity-25 pt-16 pb-8 px-8">
+      <div className="h-full w-full bg-white p-8 overflow-auto">
+        <div className="max-w-screen-sm mx-auto h-full">
+          <img src={LetraLogo} alt="Logo" className="h-12 flex mx-auto mb-8" />
+          <div className="w-full">
+            <div className="mb-2 relative w-full">
+              <input
+                className="input text-xs h-9 pt-3 border border-gray-200 appearance-none rounded w-full px-2 focus:border-gray-400 focus:outline-none active:outline-none active:border-gray-400"
+                id="email"
+                type="text"
+              />
+              <label
+                htmlFor="email"
+                className="label absolute pl-2 mt-1 leading-tighter text-gray-400 labelSmall cursor-text"
+              >
+                Teléfono, usuario o correo electrónico
+              </label>
+            </div>
+            <div className="mb-4 relative w-full">
+              <input
+                className="input text-xs h-9 pt-3 border border-gray-200 appearance-none rounded w-full px-2 focus:border-gray-400 focus:outline-none active:outline-none active:border-gray-400"
+                id="password"
+                type="password"
+              />
+              <label
+                htmlFor="password"
+                className="label absolute pl-2 mt-1 leading-tighter text-gray-400 labelSmall cursor-text"
+              >
+                Contraseña
+              </label>
+            </div>
+            <button
+              type="button"
+              className="buttonInstagram w-full text-sm py-1 text-white rounded px-4 transition duration-500 ease select-none hover:bg-blue-700 focus:outline-none focus:shadow-outline mb-2"
             >
-              Regístrate
-            </a>
+              Iniciar Sesión
+            </button>
           </div>
-          <h5 className="mx-auto text-sm">Descargar app</h5>
-          <div className="grid grid-cols-2 gap-2">
-            <img
-              className="mx-auto"
-              src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_spanish_latinamerica_mexico.png/e2247c4f90de.png"
-              alt=""
-            />
-            <img
-              className="mx-auto"
-              src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_spanish_latinamerica_mexico-es_LA.png/3cd8a27083c0.png"
-              alt=""
-            />
+          <div className="flex flex-row items-center mb-2">
+            <div className="h-px bg-gray-300 w-2/5"></div>
+            <div className="mx-auto text-gray-400 text-lg mb-1">o</div>
+            <div className="h-px bg-gray-300 w-2/5"></div>
           </div>
-          <div className="text-xs text-gray-400 flex flex-wrap justify-center">
-            <span className="mr-2">Información</span>
-            <span className="mr-2">Blog</span>
-            <span className="mr-2">Empleo</span>
-            <span className="mr-2">Ayuda</span>
-            <span className="mr-2">API</span>
-            <span className="mr-2">Privacidad</span>
-            <span className="mr-2">Condiciones</span>
-            <span className="mr-2">Cuentas destacadas</span>
-            <span className="mr-2">Hashtags</span>
-            <span className="mr-2">Ubicaciones</span>
-          </div>
-          <div className="flex flex-row text-xs text-gray-400">
-            <span className="mr-2 ml-auto">Español</span>
-            <span className="mr-2 mr-auto">© 2021 Instagram from Facebook</span>
+          <div className="flex flex-wrap content-between h-96 pb-2">
+            <div className="flex flex-row block	w-full">
+              <h5 className="mx-auto linkInstagram2 text-sm font-medium">
+                Iniciar sesión con Facebook
+              </h5>
+            </div>
+            <div className="flex flex-row block	w-full">
+              <h5 className="mx-auto linkInstagram2 text-xs">
+                ¿Olvidaste tu contraseña?
+              </h5>
+            </div>
+            <div className="flex flex-row block	w-full">
+              <span className="text-xs mr-1 ml-auto">
+                ¿No tienes una cuenta?{" "}
+              </span>{" "}
+              <a
+                className="linkInstagram text-xs mr-auto"
+                href="http://"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Regístrate
+              </a>
+            </div>
+            <div className="flex flex-row block	w-full">
+              <div className="flex m-auto">
+                <h5 className="mx-auto text-sm block">Descargar app</h5>
+              </div>
+            </div>
+            <div className="flex flex-row block	w-full">
+              <div className="grid grid-cols-2 gap-2 w-full">
+                <img
+                  className="ml-auto sm:h-16"
+                  src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_spanish_latinamerica_mexico.png/e2247c4f90de.png"
+                  alt=""
+                />
+                <img
+                  className="mr-auto sm:h-16"
+                  src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_spanish_latinamerica_mexico-es_LA.png/3cd8a27083c0.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="labelSmall text-gray-400 flex flex-wrap justify-center mx-auto">
+              <span className="mr-2">Información</span>
+              <span className="mr-2">Blog</span>
+              <span className="mr-2">Empleo</span>
+              <span className="mr-2">Ayuda</span>
+              <span className="mr-2">API</span>
+              <span className="mr-2">Privacidad</span>
+              <span className="mr-2">Condiciones</span>
+              <span className="mr-2">Cuentas destacadas</span>
+              <span className="mr-2">Hashtags</span>
+              <span className="mr-2">Ubicaciones</span>
+            </div>
+            <div className="flex text-xs text-gray-400 mx-auto">
+              <span>© 2021 Instagram from Facebook</span>
+            </div>
           </div>
         </div>
       </div>
