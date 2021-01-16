@@ -66,13 +66,19 @@ export default function Login() {
           <div className="mx-auto text-gray-400 text-lg mb-1">o</div>
           <div className="h-px bg-gray-300 w-2/5"></div>
         </div>
-        <div className="flex flex-col">
-          <h5 className="mx-auto linkInstagram2 mb-4 text-sm font-medium">Iniciar sesión con Facebook</h5>
-          <h5 className="mx-auto mb-16 linkInstagram2 text-xs">¿Olvidaste tu contraseña?</h5>
-          <div className="flex flex-row mb-4">
-            <span className="ml-auto text-sm mr-1">¿No tienes una cuenta? </span>{" "}
+        <div className="flex flex-col h-full">
+          <h5 className="mx-auto linkInstagram2 text-sm font-medium">
+            Iniciar sesión con Facebook
+          </h5>
+          <h5 className="mx-auto linkInstagram2 text-xs">
+            ¿Olvidaste tu contraseña?
+          </h5>
+          <div className="flex flex-row">
+            <span className="ml-auto text-xs mr-1">
+              ¿No tienes una cuenta?{" "}
+            </span>{" "}
             <a
-              className="mr-auto linkInstagram text-sm"
+              className="mr-auto linkInstagram text-xs"
               href="http://"
               target="_blank"
               rel="noopener noreferrer"
@@ -80,7 +86,7 @@ export default function Login() {
               Regístrate
             </a>
           </div>
-          <h5 className="mx-auto my-5 text-sm">Descargar app</h5>
+          <h5 className="mx-auto text-sm">Descargar app</h5>
           <div className="grid grid-cols-2 gap-2">
             <img
               className="mx-auto"
@@ -93,21 +99,21 @@ export default function Login() {
               alt=""
             />
           </div>
-          <div className="text-sm text-gray-400 flex flex-wrap justify-center mt-8 mb-4">
-              <span className="mr-2">Información</span>
-              <span className="mr-2">Blog</span>
-              <span className="mr-2">Empleo</span>
-              <span className="mr-2">Ayuda</span>
-              <span className="mr-2">API</span>
-              <span className="mr-2">Privacidad</span>
-              <span className="mr-2">Condiciones</span>
-              <span className="mr-2">Cuentas destacadas</span>
-              <span className="mr-2">Hashtags</span>
-              <span className="mr-2">Ubicaciones</span>
+          <div className="text-xs text-gray-400 flex flex-wrap justify-center">
+            <span className="mr-2">Información</span>
+            <span className="mr-2">Blog</span>
+            <span className="mr-2">Empleo</span>
+            <span className="mr-2">Ayuda</span>
+            <span className="mr-2">API</span>
+            <span className="mr-2">Privacidad</span>
+            <span className="mr-2">Condiciones</span>
+            <span className="mr-2">Cuentas destacadas</span>
+            <span className="mr-2">Hashtags</span>
+            <span className="mr-2">Ubicaciones</span>
           </div>
           <div className="flex flex-row text-xs text-gray-400">
-              <span className="mr-2">Español</span>
-              <span>© 2021 Instagram from Facebook</span>
+            <span className="mr-2 ml-auto">Español</span>
+            <span className="mr-2 mr-auto">© 2021 Instagram from Facebook</span>
           </div>
         </div>
       </div>
