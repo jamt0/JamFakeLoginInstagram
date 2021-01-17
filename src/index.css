@@ -31,7 +31,11 @@ code {
 }
 
 .buttonInstagram{
-  background-color: #0095f6;
+  background-color: rgba(100, 193, 255, 0.5);
+}
+
+.buttonInstagramDisable{
+  background-color: #64c1ff;
 }
 
 .linkInstagram{

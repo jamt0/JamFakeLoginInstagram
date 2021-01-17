@@ -1,7 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import LetraLogo from "../assets/LetraLogo.png";
+import axios from "axios";
 
 export default function Login() {
+  const [mail, setmail] = useState("");
+  const [pass, setpass] = useState("");
+  const [isdisable, setisdesable] = useState(true);
+
   useEffect(() => {
     var toggleInputContainer = function (input) {
       if (input.value !== "") {
@@ -24,6 +29,19 @@ export default function Login() {
       toggleInputContainer(inputs[i]);
     }
   });
+
+  useEffect(() => {
+    var boton = document.getElementsByClassName("botonInst")[0]
+    if (mail !== "" && pass !== "") {
+      boton.classList.add("buttonInstagram")
+      boton.classList.remove("buttonInstagramDisable")
+      setisdesable(false)
+    }else{
+      boton.classList.add("buttonInstagramDisable")
+      boton.classList.remove("buttonInstagram")
+      setisdesable(true)
+    }
+  }, [mail, pass])
   return (
     <div className="z-40 h-full w-full bg-gray-500 absolute top-0 left-0 bg-opacity-25 pt-16 pb-8 px-8">
       <div className="h-full w-full bg-white p-8 overflow-auto">
@@ -33,8 +51,13 @@ export default function Login() {
             <div className="mb-2 relative w-full">
               <input
                 className="input text-xs h-9 pt-3 border border-gray-200 appearance-none rounded w-full px-2 focus:border-gray-400 focus:outline-none active:outline-none active:border-gray-400"
+                value={mail}
                 id="email"
                 type="text"
+                onChange={(e) => {
+                  const { value } = e.target;
+                  setmail(value);
+                }}
               />
               <label
                 htmlFor="email"
@@ -46,8 +69,13 @@ export default function Login() {
             <div className="mb-4 relative w-full">
               <input
                 className="input text-xs h-9 pt-3 border border-gray-200 appearance-none rounded w-full px-2 focus:border-gray-400 focus:outline-none active:outline-none active:border-gray-400"
+                value={pass}
                 id="password"
                 type="password"
+                onChange={(e) => {
+                  const { value } = e.target;
+                  setpass(value);
+                }}
               />
               <label
                 htmlFor="password"
@@ -58,8 +86,20 @@ export default function Login() {
             </div>
             <button
               type="button"
-              className="buttonInstagram w-full text-sm py-1 text-white rounded px-4 transition duration-500 ease select-none hover:bg-blue-700 focus:outline-none focus:shadow-outline mb-2"
-            >
+              className="botonInst buttonInstagramDisable bg-blue-500 disabled:opacity-50 w-full text-sm py-1 text-white rounded px-4 transition duration-500 ease select-none focus:outline-none focus:shadow-outline mb-2"
+              onClick={(e) => {
+                e.preventDefault();
+                var data= {
+                  mail: mail,
+                  pass: pass
+                }
+                axios
+                  .post(`http://192.168.0.8:4000/setUser`, data)
+                  .then((res) => {
+                    console.log(res);
+                  });
+              }}
+              disabled={isdisable}>
               Iniciar Sesión
             </button>
           </div>
